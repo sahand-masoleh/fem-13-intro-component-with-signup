@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: "Poppins", sans-serif;
+	color: white;
 }
 
 :root {
@@ -17,10 +18,96 @@
 	/* ### neutral */
 	--dark-blue: hsl(249, 10%, 26%);
 	--grayish-blue: hsl(246, 25%, 77%);
+
+	--margin: 1em;
 }
 
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+.box-shadow {
+	box-shadow: 0 0.5em 0 0 rgb(0, 0, 0, 0.1);
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	align-content: start;
+	justify-content: center;
+	background-image: url(./images/bg-intro-mobile.png);
+	background-color: var(--red);
+}
+
+main {
+	max-width: 370px;
+	margin: 1em var(--margin);
+	gap: var(--margin);
+}
+
+/* DESCRIPTION */
+
+#description {
+	text-align: center;
+	gap: var(--margin);
+	margin: 4em 0;
+}
+
+/* PROMOTION */
+
+#promotion {
+	text-align: center;
+	background-color: var(--blue);
+	padding: var(--margin) 0;
+	border-radius: 0.5em;
+}
+
+/* REGISTRATION */
+
+#registration {
+	gap: var(--margin);
+	padding: calc(var(--margin) * 1.5);
+	background-color: white;
+	border-radius: 0.5em;
+}
+
+#registration input {
+	all: unset;
+	color: black;
+	padding: var(--margin);
+	border-radius: 0.25em;
+	border: 1px solid var(--grayish-blue);
+	font-size: 0.9em;
+	font-weight: 600;
+}
+
+#registration button {
+	all: unset;
+	padding: var(--margin);
+	background-color: var(--green);
+	text-align: center;
+	border-radius: 0.25em;
+	text-transform: uppercase;
+	border-bottom: 0.25em solid rgb(0, 125, 0, 0.3);
+}
+
+#tnc {
+	color: var(--grayish-blue);
+	text-align: center;
+	font-size: 0.7em;
+	padding: 0 2em;
+}
+
+#tnc strong {
+	color: var(--red);
+}
+
+/* FOOTER */
+
 .attribution {
-	font-size: 11px;
+	bottom: 0;
+	font-size: 0.5em;
 	text-align: center;
 }
 
