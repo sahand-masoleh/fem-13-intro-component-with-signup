@@ -22,6 +22,26 @@
 	--margin: 1em;
 }
 
+body {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	align-content: start;
+	justify-content: center;
+	background-image: url(./images/bg-intro-mobile.png);
+	background-color: var(--red);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	max-width: 370px;
+	margin: 1em var(--margin);
+	gap: var(--margin);
+}
+
+/* UTILITY CLASSES */
+
 .flex-column {
 	display: flex;
 	flex-direction: column;
@@ -40,22 +60,37 @@
 	transform: translateY(2px);
 }
 
-body {
-	min-height: 100vh;
-	display: grid;
-	grid-template-rows: 1fr auto;
-	align-content: start;
-	justify-content: center;
-	background-image: url(./images/bg-intro-mobile.png);
-	background-color: var(--red);
+.error {
+	margin-bottom: 1em;
+	border-color: var(--margin);
 }
 
-main {
-	display: flex;
-	flex-direction: column;
-	max-width: 370px;
-	margin: 1em var(--margin);
-	gap: var(--margin);
+.error input {
+	border: 2px solid var(--red) !important;
+}
+
+.error::after {
+	content: attr(data-error);
+	position: absolute;
+	bottom: -1.5em;
+	right: 0;
+	color: var(--red);
+	font-size: 0.7em;
+	font-style: italic;
+}
+
+.error::before {
+	content: "!";
+	position: absolute;
+	width: 1.5em;
+	height: 1.5em;
+	right: 1em;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--red);
+	border-radius: 50%;
+	display: grid;
+	place-content: center;
 }
 
 /* DESCRIPTION */
@@ -85,8 +120,14 @@ main {
 	border-radius: 0.5em;
 }
 
-#registration input {
+.input-containers {
+	display: flex;
+	position: relative;
+}
+
+.input-containers input {
 	all: unset;
+	width: 100%;
 	color: black;
 	padding: var(--margin);
 	border-radius: 0.25em;
